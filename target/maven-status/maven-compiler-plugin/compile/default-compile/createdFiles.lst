@@ -1,0 +1,6 @@
+de\smartheating\SmartHeatingCommons\databaseInterfaces\SensorRepository.class
+de\smartheating\SmartHeatingCommons\exceptions\DatabaseConnectionException.class
+de\smartheating\SmartHeatingCommons\TestModel.class
+de\smartheating\SmartHeatingCommons\databaseInterfaces\SensorEventRepository.class
+de\smartheating\SmartHeatingCommons\persistedData\SensorEvent.class
+de\smartheating\SmartHeatingCommons\persistedData\Sensor.class
