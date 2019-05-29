@@ -9,8 +9,8 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
-@Table(name = "sensors")
-public class Sensor {
+@Table(name = "devices")
+public class Device {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,9 +18,11 @@ public class Sensor {
 	private Long id;
 
 	@JsonProperty("module_name")
-	private String sensorName;
+	private String deviceName;
 	@JsonProperty("ip")
 	private String ip;
+	@JsonProperty("device_type")
+	private String deviceType;
 	@JsonProperty("port")
 	private Integer port;
 	@JsonProperty("send_interval")
@@ -36,12 +38,12 @@ public class Sensor {
 		return id;
 	}
 
-	public String getSensorName() {
-		return sensorName;
+	public String getDeviceName() {
+		return deviceName;
 	}
 
-	public void setSensorName(String sensorName) {
-		this.sensorName = sensorName;
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
 	}
 
 	public String getIp() {
@@ -90,6 +92,14 @@ public class Sensor {
 
 	public void setScriptPath(String scriptPath) {
 		this.scriptPath = scriptPath;
+	}
+
+	public String getDeviceType() {
+		return deviceType;
+	}
+
+	public void setDeviceType(String deviceType) {
+		this.deviceType = deviceType;
 	}
 
 }

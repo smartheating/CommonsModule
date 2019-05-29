@@ -26,11 +26,10 @@ public class SensorEvent {
 	@Temporal(TemporalType.TIMESTAMP)
 	@JsonProperty("timestamp")
 	private Date timestamp;
-	private Integer integerValue;
-	private Boolean booleanValue;
 	@JsonProperty("value")
-	private String stringValue;
-	private Float floatValue;
+	private String value;
+	@JsonProperty("value_type")
+	private String valueType;
 
 	public Long getId() {
 		return id;
@@ -52,36 +51,20 @@ public class SensorEvent {
 		this.timestamp = timestamp;
 	}
 
-	public Integer getIntegerValue() {
-		return integerValue;
+	public String getValueType() {
+		return valueType;
 	}
 
-	public void setIntegerValue(Integer integerValue) {
-		this.integerValue = integerValue;
+	public void setValueType(String valueType) {
+		this.valueType = valueType;
 	}
 
-	public Boolean getBooleanValue() {
-		return booleanValue;
+	public String getValue() {
+		return value;
 	}
 
-	public void setBooleanValue(Boolean booleanValue) {
-		this.booleanValue = booleanValue;
-	}
-
-	public String getStringValue() {
-		return stringValue;
-	}
-
-	public void setStringValue(String stringValue) {
-		this.stringValue = stringValue;
-	}
-
-	public Float getFloatValue() {
-		return floatValue;
-	}
-
-	public void setFloatValue(Float floatValue) {
-		this.floatValue = floatValue;
+	public void setValue(String value) {
+		this.value = value;
 	}
 
 }
