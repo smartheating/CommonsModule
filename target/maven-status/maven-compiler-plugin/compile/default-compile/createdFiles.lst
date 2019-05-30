@@ -1,4 +1,5 @@
 de\smartheating\SmartHeatingCommons\exceptions\DatabaseConnectionException.class
+de\smartheating\SmartHeatingCommons\communication\RepositoryClient.class
 de\smartheating\SmartHeatingCommons\persistedData\Device.class
 de\smartheating\SmartHeatingCommons\databaseInterfaces\SensorEventRepository.class
 de\smartheating\SmartHeatingCommons\persistedData\SensorEvent.class

@@ -1,5 +1,6 @@
 C:\Users\stefa\Documents\Smart Cities Repository\CommonsModule\src\main\java\de\smartheating\SmartHeatingCommons\exceptions\DatabaseConnectionException.java
 C:\Users\stefa\Documents\Smart Cities Repository\CommonsModule\src\main\java\de\smartheating\SmartHeatingCommons\databaseInterfaces\SensorEventRepository.java
 C:\Users\stefa\Documents\Smart Cities Repository\CommonsModule\src\main\java\de\smartheating\SmartHeatingCommons\persistedData\SensorEvent.java
+C:\Users\stefa\Documents\Smart Cities Repository\CommonsModule\src\main\java\de\smartheating\SmartHeatingCommons\communication\RepositoryClient.java
 C:\Users\stefa\Documents\Smart Cities Repository\CommonsModule\src\main\java\de\smartheating\SmartHeatingCommons\persistedData\Device.java
 C:\Users\stefa\Documents\Smart Cities Repository\CommonsModule\src\main\java\de\smartheating\SmartHeatingCommons\databaseInterfaces\DeviceRepository.java
