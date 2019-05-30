@@ -13,8 +13,8 @@ import javax.persistence.TemporalType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
-@Table(name = "sensorevents")
-public class SensorEvent {
+@Table(name = "events")
+public class Event {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +22,7 @@ public class SensorEvent {
 	private Long id;
 
 	@JsonProperty("module_id")
-	private Long sensorId;
+	private Long deviceId;
 	@Temporal(TemporalType.TIMESTAMP)
 	@JsonProperty("timestamp")
 	private Date timestamp;
@@ -35,12 +35,12 @@ public class SensorEvent {
 		return id;
 	}
 
-	public Long getSensorId() {
-		return sensorId;
+	public Long getDeviceId() {
+		return deviceId;
 	}
 
-	public void setSensorId(Long sensorId) {
-		this.sensorId = sensorId;
+	public void setDeviceId(Long deviceId) {
+		this.deviceId = deviceId;
 	}
 
 	public Date getTimestamp() {

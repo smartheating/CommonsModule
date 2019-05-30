@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 import de.smartheating.SmartHeatingCommons.exceptions.ProfileNotSetException;
 import de.smartheating.SmartHeatingCommons.persistedData.Device;
-import de.smartheating.SmartHeatingCommons.persistedData.SensorEvent;
+import de.smartheating.SmartHeatingCommons.persistedData.Event;
 
 @Component
 public class RepositoryClient {
@@ -28,8 +28,8 @@ public class RepositoryClient {
 		return rest.postForObject(buildUrl("devices"), new HttpEntity<>(device), Device.class);
 	}
 	
-	public SensorEvent addEvent(SensorEvent event) throws ProfileNotSetException, RestClientException {	
-		return rest.postForObject(buildUrl("sensorevents"), new HttpEntity<>(event), SensorEvent.class);
+	public Event addEvent(Event event) throws ProfileNotSetException, RestClientException {	
+		return rest.postForObject(buildUrl("events"), new HttpEntity<>(event), Event.class);
 	}
 	
 	private String buildUrl(String endpoint) throws ProfileNotSetException {

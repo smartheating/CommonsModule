@@ -4,9 +4,9 @@ import javax.transaction.Transactional;
 
 import org.springframework.data.repository.CrudRepository;
 
-import de.smartheating.SmartHeatingCommons.persistedData.SensorEvent;
+import de.smartheating.SmartHeatingCommons.persistedData.Event;
 
 @Transactional
-public interface SensorEventRepository extends CrudRepository<SensorEvent, Long> {
+public interface EventRepository extends CrudRepository<Event, Long> {
 
 }
