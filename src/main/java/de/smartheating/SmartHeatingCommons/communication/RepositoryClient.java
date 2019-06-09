@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import de.smartheating.SmartHeatingCommons.exceptions.ProfileNotSetException;
 import de.smartheating.SmartHeatingCommons.persistedData.Device;
 import de.smartheating.SmartHeatingCommons.persistedData.Event;
 
@@ -24,21 +23,12 @@ public class RepositoryClient {
 	@Autowired
 	RestTemplate rest;
 	
-	public Device addDevice(Device device) throws ProfileNotSetException, RestClientException {	
-		return rest.postForObject(buildUrl("devices"), new HttpEntity<>(device), Device.class);
+	public Device addDevice(String url, Device device) throws RestClientException {	
+		return rest.postForObject(url + "/devices", new HttpEntity<>(device), Device.class);
 	}
 	
-	public Event addEvent(Event event) throws ProfileNotSetException, RestClientException {	
-		return rest.postForObject(buildUrl("events"), new HttpEntity<>(event), Event.class);
+	public Event addEvent(String url, Event event) throws RestClientException {	
+		return rest.postForObject(url + "/events", new HttpEntity<>(event), Event.class);
 	}
-	
-	private String buildUrl(String endpoint) throws ProfileNotSetException {
-		if (activeProfile.equals("dev")) {
-			return "http://localhost:9011/" + endpoint;
-		} else if(activeProfile.equals("docker")) {
-			return "http://repository:9011/" + endpoint;
-		} else {
-			throw new ProfileNotSetException("No or unknown Spring-Profile is activ!");
-		}
-	}
+
 }
