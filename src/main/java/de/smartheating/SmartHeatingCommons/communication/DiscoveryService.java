@@ -20,7 +20,7 @@ public class DiscoveryService {
 		List<ServiceInstance> serviceInstances = discoveryClient.getInstances(serviceId);
 		
 		if(serviceInstances.isEmpty()) {
-			throw new NotFoundException("Service with id: " + serviceId + "is not registered with eureka!");
+			throw new NotFoundException("Service with id: '" + serviceId + "' is not registered with eureka!");
 		}
 		
 		// Since we will only have one instance per service
