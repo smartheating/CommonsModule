@@ -11,19 +11,19 @@ import javassist.NotFoundException;
 
 @Service
 public class DiscoveryService {
-	
+
 	@Autowired
 	DiscoveryClient discoveryClient;
 
-	public ServiceInstance getServiceInstance(String serviceId) throws NotFoundException {
+	public String getServiceUrl(String serviceId) throws NotFoundException {
 		// Get ServiceInstance from Eureka
 		List<ServiceInstance> serviceInstances = discoveryClient.getInstances(serviceId);
-		
-		if(serviceInstances.isEmpty()) {
+
+		if (serviceInstances.isEmpty() || serviceInstances == null) {
 			throw new NotFoundException("Service with id: '" + serviceId + "' is not registered with eureka!");
 		}
-		
+
 		// Since we will only have one instance per service
-		return serviceInstances.get(0);
+		return serviceInstances.get(0).getUri().toString();
 	}
 }
