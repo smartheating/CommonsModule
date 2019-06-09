@@ -1,4 +1,4 @@
-package de.smartheating.SmartHeatingCommons.communication;
+package de.smartheating.SmartHeatingCommons.services;
 
 import java.util.List;
 
