@@ -23,6 +23,8 @@ public class Event {
 
 	@JsonProperty("module_id")
 	private Long deviceId;
+	@JsonProperty("tag")
+	private String tag;
 	@Temporal(TemporalType.TIMESTAMP)
 	@JsonProperty("timestamp")
 	private Date timestamp;
@@ -41,6 +43,14 @@ public class Event {
 
 	public void setDeviceId(Long deviceId) {
 		this.deviceId = deviceId;
+	}
+
+	public String getTag() {
+		return tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
 	}
 
 	public Date getTimestamp() {
