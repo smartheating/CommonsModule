@@ -29,4 +29,9 @@ public class RepositoryClient {
 		return rest.postForObject(url + "/events", new HttpEntity<>(event), Event.class);
 	}
 
+	public Device getDevice(String url, Long deviceId) {
+		logger.info("Calling Repository-Service to get a device");
+		return rest.getForEntity(url + "/devices/" + deviceId, Device.class).getBody();
+	}
+
 }

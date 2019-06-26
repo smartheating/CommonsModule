@@ -31,4 +31,8 @@ public class DiscoveryService {
 		logger.info("Returning URL '" + serviceInstances.get(0).getUri().toString() + "' for service with id '" + serviceId + "'");
 		return serviceInstances.get(0).getUri().toString();
 	}
+	
+	public String getDeviceUrl(String ip, int port) {
+		return "http://" + ip + ":" + port;
+	}
 }
